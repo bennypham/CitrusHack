@@ -33,7 +33,7 @@ function initializeMap() {
     var lon = lon;  // longitude from the place service
     var name = name;   // name of the place from the place service
     var bounds = window.mapBounds;            // current boundaries of the map window
-    console.log(lat + "," + lon + ", " + name);
+    //console.log(lat + "," + lon + ", " + name);
     // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
       map: map,
@@ -62,10 +62,32 @@ function initializeMap() {
     // center the map
     map.setCenter(bounds.getCenter());
   }
+  
 
-  station.locations.forEach(function(index){
-    
-      mapMarker(index.lat, index.lon, index.name);
+  // station.locations.forEach(function(index){
+  //   	var url = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyCkTNVINAtrjTwtNbJUAZSIwni3t02mPVk";
+		// $.getJSON( url, function( data ) {
+		// 	var lat = data.results[0]["geometry"]["location"]["lat"];
+		// 	var lon = data.results[0]["geometry"]["location"]["lng"];
+		//   console.log(data.results[0]["geometry"]["location"]);
+		//   console.log(lat);
+		//   console.log(lon);
+		//   mapMarker(index.lat, index.lon, index.name);
+		// });
+  //   });
+  crimeData.forEach(function(index){
+  		if (index.blockAddress.indexOf("/") < 0){
+  			var url = "https://maps.googleapis.com/maps/api/geocode/json?address="+index.blockAddress+"+,Riverside,+CA&key=AIzaSyCkTNVINAtrjTwtNbJUAZSIwni3t02mPVk";
+			$.getJSON( url, function( data ) {
+				var lat = data.results[0]["geometry"]["location"]["lat"];
+				var lon = data.results[0]["geometry"]["location"]["lng"];
+			  // console.log(data.results[0]["geometry"]["location"]);
+			  // console.log(lat);
+			  // console.log(lon);
+			  mapMarker(lat, lon, index.offenseDate +"<br />"  + index.crimeType);
+			});
+  		}
+    	
     });
 
 }
