@@ -28,8 +28,16 @@
 <script type="text/javascript" src="js/wow.js"></script>
 <script type="text/javascript" src="js/classie.js"></script>
 <script src="contactform/contactform.js"></script>
+<<<<<<< Updated upstream
 <script type="text/javascript" src="googlemap.js"> </script>
 
+||||||| merged common ancestors
+
+=======
+<!-- google map -->
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    
+>>>>>>> Stashed changes
 </head>
 <body>
 <header class="header" id="header"><!--header-start-->
@@ -50,6 +58,7 @@
         	<li><a href="#header">Home</a></li>
             <li><a href="#service">Product</a></li>
             <li class="small-logo"><a href="#header"><img src="https://www.avinc.com/images/uploads/careers/796/ucr__small.jpg" alt=""></a></li>
+            <li><a href="#Map">Map</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -74,7 +83,19 @@
 	</div>
 </section><!--main-section-end-->
 
-
+<section class="main-section Map" id="Map"><!--main-section team-start-->
+    <div class="container">
+        <h2>Map</h2>
+        <h6>Check The Crime Area</h6>
+        
+        <div class="row">
+            <div class="col-mid-12">
+                <div id="mapDiv" class="google-map"></div>
+            </div>
+        </div>
+        
+    </div>
+</section><!--main-section Map-end-->
 
 <section class="main-section team" id="team"><!--main-section team-start-->
 	<div class="container">
@@ -295,6 +316,26 @@ $(window).load(function(){
 });
 
 </script>
-
+<script type="text/javascript"> 
+        var station = {
+          "locations" : [{
+              "name" : "bluf",
+              "lon" : 168.292081,
+              "lat" : -46.585060
+            },
+            {
+              "name" : "dund",
+              "lon" : 170.597164,
+              "lat" : -45.883662
+            },
+            {
+              "name" : "mac1",
+              "lon" : 158.935831,
+              "lat" : -54.499528
+            }
+          ]
+        };
+    </script>
+<script type="text/javascript" src="js/helper.js"></script>
 </body>
 </html>
