@@ -30,8 +30,6 @@
 <script src="contactform/contactform.js"></script>
 <!-- google map -->
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
-<script type="text/javascript" src="js/helper.js"></script>
-<script type="text/javascript" src="js/crimeData.js"></script>
 </head>
 <body>
 <header class="header" id="header"><!--header-start-->
@@ -66,9 +64,27 @@
     	<h2>Product</h2>
 
     	<h6> Location of Crimes in Riverside </h6>
-
         <div class="row">
+            <div class="col-mid-4"></div>
+            <div class="col-mid-4 center-block">
+                
+            </div>
+            <div class="col-mid-4"></div>
+        </div>
+   
+        <div class="row">
+            <button type="button" id="myButton"  class="btn btn-default" autocomplete="off">ALL</button>
+            <button type="button" id="myButton1"  class="btn btn-default" autocomplete="off">THEFT</button>
+            <button type="button" id="myButton2"  class="btn btn-default" autocomplete="off">ROBBERY</button>
+            <button type="button" id="myButton3"  class="btn btn-default" autocomplete="off">FRAUD</button>
+
             <div class="col-mid-12">
+                            <!-- <div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">            
+                    <a href="#" class="btn btn-default" role="button">ALL</a>
+                    <a href="#" class="btn btn-default" role="button">THEFT</a>
+                    <a href="#" class="btn btn-default" role="button">ROBBERY</a>
+                    <a href="#" class="btn btn-default" role="button">OTHER</a>
+                </div> -->
                 <div id="mapDiv" class="google-map"></div>
             </div>
         </div>
@@ -295,5 +311,8 @@ $(window).load(function(){
 });
 
 </script>
+
+<script type="text/javascript" src="js/helper.js"></script>
+<script type="text/javascript" src="js/crimeData.js"></script>
 </body>
 </html>
